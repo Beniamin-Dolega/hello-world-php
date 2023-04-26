@@ -3,6 +3,8 @@ version: "3.3"
 services:
   hello-world-php:
     build: .
+    volumes:
+      - ./webpage/:/var/www/html
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.hello-world-php.rule=Host(`hello-world-php.localhost`)"
